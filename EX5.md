@@ -19,6 +19,7 @@ create table employee1(empid NUMBER, empname VARCHAR(10), dept VARCHAR(10),salar
 ### Create salary_log table
 create table salary_log(log_id NUMBER GENERATED ALWAYS AS IDENTITY, empid NUMBER,empname VARCHAR(10),old_salary NUMBER,new_salary NUMBER,update_date DATE);
 ### PLSQL Trigger code
+```
 create or replace trigger log_salary_update
 before update on employee1
 for each row
@@ -34,7 +35,8 @@ values(:old.empid, :old.empname , v_old_salary ,v_new_salary , SYSDATE);
 end if;     
 end;
  /
- 
+ ```
+
 ## Output:
 ![image](https://github.com/Priya-Loganathan/Ex-No-5-Creating-Triggers-using-PL-SQL/assets/121166075/86467a50-bd8b-4082-9609-fea1310833ad)
 ![image](https://github.com/Priya-Loganathan/Ex-No-5-Creating-Triggers-using-PL-SQL/assets/121166075/adfa1ca7-fcc3-468d-9a9b-c416495aeb88)
