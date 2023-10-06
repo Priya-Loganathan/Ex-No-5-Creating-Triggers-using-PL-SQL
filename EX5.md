@@ -15,9 +15,13 @@ To create a Trigger using PL/SQL.
 
 ## Program:
 ### Create employee table
+```
 create table employee1(empid NUMBER, empname VARCHAR(10), dept VARCHAR(10),salary NUMBER);
+```
 ### Create salary_log table
+```
 create table salary_log(log_id NUMBER GENERATED ALWAYS AS IDENTITY, empid NUMBER,empname VARCHAR(10),old_salary NUMBER,new_salary NUMBER,update_date DATE);
+```
 ### PLSQL Trigger code
 ```
 create or replace trigger log_salary_update
